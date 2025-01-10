@@ -1,0 +1,153 @@
+/****************************************************
+ * style.css - estilos globales
+ ****************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  height: 100dvh;
+  width: 100dvw;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr min-content;
+  gap: 16px;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer {
+  grid-area: footer;
+}
+
+header,
+footer {
+  background: #343a40;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+main {
+  grid-area: main;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section {
+  margin: 1rem 0;
+}
+
+.inicio-links {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  gap: 1rem;
+}
+
+.btn {
+  display: flex;
+  padding: 0.7rem;
+  background: #007bff;
+  width: fit-content;
+  height: fit-content;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  margin: 0.3rem;
+}
+
+.btn-iniciar-sesion {
+  border-radius: 50px;
+  height: 50px;
+  background: rgb(144, 238, 144);
+  color: #333;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+.btn-iniciar-sesion:hover {
+  background: rgb(106, 235, 106);
+}
+
+.error {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+.highlight {
+  color: green;
+  font-weight: bold;
+}
+
+ul {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+li {
+  margin: 0.3rem 0;
+}
+
+/* animación bounce */
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-20px);
+  }
+
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.anim-bounce {
+  animation: bounce 1.5s infinite;
+}

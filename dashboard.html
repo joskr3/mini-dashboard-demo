@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - MiniProyecto</title>
+  <script type="module" src="dashboard.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Dashboard de Tareas</h1>
+  </header>
+
+  <main>
+    <p>Usuario actual: <span id="currentUser"></span></p>
+    <p><a href="index.html" class="btn">Volver al Inicio</a></p>
+
+    <div class="section">
+      <h2>Agregar Nueva Tarea</h2>
+      <input type="text" id="taskTitle" placeholder="Título de la tarea..." />
+      <button id="btnAddTask" disabled>Agregar Tarea</button>
+      <p id="errorMsg" class="error"></p>
+    </div>
+
+    <div class="section">
+      <h2>Lista de Tareas</h2>
+      <ul id="taskList"></ul>
+      <p id="stats"></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MiniProyecto codiGo</p>
+  </footer>
+</body>
+
+</html>
