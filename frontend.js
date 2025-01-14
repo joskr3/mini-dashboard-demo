@@ -34,18 +34,18 @@ export function clearInput(id) {
  *     -> se usa en dashboard.html
  *     -> demonstar map y render
  */
-export function renderTareas(tareas, container, onMarkDone, onDelete) {
+export function renderTareas(tareas, container, onEdit, onDelete) {
   container.innerHTML = "";
   tareas.map((t) => {
     const li = document.createElement("li");
     li.textContent = t.titulo + (t.realizado ? " (hecho)" : "");
 
-    // Botón "Hecho"
-    const btnDone = document.createElement("button");
-    btnDone.textContent = "Hecho";
-    btnDone.style.marginLeft = "0.5rem";
-    btnDone.addEventListener("click", () => onMarkDone(t.id));
-    li.appendChild(btnDone);
+    // Botón "Editar
+    const btnEdit = document.createElement("button");
+    btnEdit.textContent = "Editar";
+    btnEdit.style.marginLeft = "0.5rem";
+    btnEdit.addEventListener("click", () => onEdit(t.id));
+    li.appendChild(btnEdit);
 
     // Botón "Borrar"
     const btnDel = document.createElement("button");

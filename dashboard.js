@@ -72,15 +72,42 @@ async function loadTareas() {
   }
 }
 
-// callback "marcar done"
-async function onMarkDone(taskId) {
+// callback "marcar edit"
+async function onEdit(taskId) {
+  const tareasInputSection = document.getElementById("taskTitleSection");
+  const tareasInput = document.getElementById("taskTitle");
+  const realizadoLabel = document.createElement("label");
+  const realizadoInput = document.createElement("input");
+  realizadoLabel.id = "realizado";
+  realizadoLabel.name = "realizado";
+  realizadoLabel.textContent = "Realizado";
+
+  realizadoInput.for = "realizado";
+  realizadoInput.type = "checkbox";
+  realizadoInput.value = true;
+
+  // console.log(tareasInput);
+  // console.log(realizadoInput, "realizado input");
+  // console.log(taskId, {
+  //   realizado: realizadoInput.checked,
+  //   titulo: tareasInput.value,
+  // });
+
+  tareasInputSection.appendChild( realizadoLabel );
+  
+  tareasInputSection.appendChild( realizadoInput );
+  
   try {
-    await updateTarea(taskId, { realizado: true });
+    await updateTarea(taskId, {
+      realizado: realizadoInput.checked,
+      titulo: tareasInput.value,
+    });
     await loadTareas();
   } catch (e) {
     console.error(e);
   }
 }
+
 // callback "borrar"
 async function onDelete(taskId) {
   try {
